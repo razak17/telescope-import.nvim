@@ -8,8 +8,8 @@ local default_languages = require("import.languages")
 local find_imports = require("import.find_imports")
 local insert_line = require("import.insert_line")
 
-local function picker(opts)
-  local languages = utils.table_concat(default_languages, opts.custom_languages)
+local function picker(config, opts)
+  local languages = utils.table_concat(default_languages, config.custom_languages)
 
   local imports = find_imports(languages)
 
@@ -41,7 +41,7 @@ local function picker(opts)
         actions.select_default:replace(function()
           actions.close(prompt_bufnr)
           local selection = action_state.get_selected_entry()
-          insert_line(selection.value, opts.insert_at_top)
+          insert_line(selection.value, config.insert_at_top)
         end)
         return true
       end,
