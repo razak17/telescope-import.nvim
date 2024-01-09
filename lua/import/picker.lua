@@ -8,7 +8,7 @@ local default_languages = require("import.languages")
 local find_imports = require("import.find_imports")
 local insert_line = require("import.insert_line")
 
-local function picker(opts)
+local function picker(opts, args)
   local languages = utils.table_concat(opts.custom_languages, default_languages)
 
   local imports = find_imports(languages)
@@ -40,9 +40,9 @@ local function picker(opts)
   })
 
   pickers
-    .new(opts, {
+    .new(args, {
       prompt_title = "Imports",
-      sorter = conf.generic_sorter(opts),
+      sorter = conf.generic_sorter(args),
       finder = finders.new_table({
         results = imports,
         entry_maker = function(import)
@@ -57,7 +57,7 @@ local function picker(opts)
         actions.select_default:replace(function()
           actions.close(prompt_bufnr)
           local selection = action_state.get_selected_entry()
-          insert_line(selection.value, opts.insert_at_top)
+          insert_line(selection.value, config.insert_at_top)
         end)
         return true
       end,

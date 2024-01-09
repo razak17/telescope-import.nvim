@@ -6,6 +6,7 @@ if not has_telescope then
 end
 
 local opts = {}
+)
 local default_opts = {
   insert_at_top = true,
   custom_languages = {},
@@ -16,8 +17,8 @@ return telescope.register_extension({
     opts = vim.tbl_extend("force", default_opts, external_opts)
   end,
   exports = {
-    import = function()
-      picker(opts)
+    import = function(args)
+      picker(opts, args)
     end,
   },
 })
