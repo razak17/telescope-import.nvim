@@ -20,6 +20,20 @@ M.remove_duplicates = function(inputTable)
   return resultTable
 end
 
+M.remove_entries = function(source_table, table_to_remove)
+  local lookup = {}
+  for _, value in ipairs(table_to_remove) do
+    lookup[value] = true
+  end
+  local new_table = {}
+  for _, value in ipairs(source_table) do
+    if not lookup[value] then
+      table.insert(new_table, value)
+    end
+  end
+  return new_table
+end
+
 M.sort_by_frequency = function(inputTable)
   local frequencies = {}
 
@@ -49,7 +63,7 @@ M.sort_by_frequency = function(inputTable)
   return sortedTable
 end
 
-M.table_concat = function(t1, t2)
+M.concat_tables = function(t1, t2)
   for i = 1, #t2 do
     t1[#t1 + 1] = t2[i]
   end
