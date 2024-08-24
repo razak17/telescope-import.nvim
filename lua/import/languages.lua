@@ -1,43 +1,67 @@
+local regex = require("import.regex")
+
 local languages = {
   {
-    regex = [[^(?:source\s+)]],
-    filetypes = { "sh", "zsh" },
-    extensions = { "sh", "zsh" },
-  },
-  {
-    regex = [[^import\s+((static\s+)?[\w.]+\*?);\s*$]],
-    filetypes = { "java" },
-    extensions = { "java" },
-  },
-  {
-    regex = [[(?m)^(?:from[ ]+(\S+)[ ]+)?import[ ]+(\S+)[ ]*$]],
-    filetypes = { "python" },
-    extensions = { "py" },
-  },
-  {
-    regex = [[^(?:import(?:[\"'\s]*([\w*{}\n, ]+)from\s*)?[\"'\s](.*?)[\"'\s].*)]],
-    filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
-    extensions = { "js", "ts" },
-  },
-  {
-    regex = [[^(?:local (\w+) = require\([\"'](.*?)[\"']\))]],
-    filetypes = { "lua" },
-    extensions = { "lua" },
-  },
-  {
-    regex = [[^(?:#include [\"<].*[\">])\s*]],
-    filetypes = { "c", "cpp" },
     extensions = { "h", "c", "cpp" },
+    filetypes = { "c", "cpp" },
+    regex = regex.c,
   },
   {
-    regex = [[^\s*use\s+([\w\\]+)(?:\s*;)?]],
-    filetypes = { "php" },
+    extensions = { "go" },
+    filetypes = { "go" },
+    regex = regex.go,
+  },
+  {
+    extensions = { "java" },
+    filetypes = { "java" },
+    regex = regex.java,
+  },
+  {
+    extensions = { "js", "ts" },
+    filetypes = { "javascript", "javascriptreact", "typescript", "typescriptreact" },
+    regex = regex.javascript,
+  },
+  {
+    extensions = { "js", "ts" },
+    filetypes = { "vue" },
+    regex = regex.javascript,
+    insert_at_line = 2,
+  },
+  {
+    extensions = { "js", "ts" },
+    filetypes = { "svelte" },
+    regex = regex.javascript,
+    insert_at_line = 2,
+  },
+  {
+    extensions = { "js", "ts" },
+    filetypes = { "vue", "javascript", "javascriptreact", "typescript", "typescriptreact" },
+    regex = regex.javascript,
+  },
+  {
+    extensions = { "lua" },
+    filetypes = { "lua" },
+    regex = regex.lua,
+  },
+  {
     extensions = { "php" },
+    filetypes = { "php" },
+    regex = regex.php,
   },
   {
-    regex = [[^import\s+(\w+)\s*$]],
-    filetypes = { "swift" },
+    extensions = { "py" },
+    filetypes = { "python" },
+    regex = regex.python,
+  },
+  {
+    extensions = { "sh", "zsh" },
+    filetypes = { "sh", "zsh" },
+    regex = regex.shell,
+  },
+  {
     extensions = { "swift" },
+    filetypes = { "swift" },
+    regex = regex.swift,
   },
 }
 
