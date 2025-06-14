@@ -3,11 +3,11 @@
 An extension for [telescope.nvim](https://github.com/nvim-telescope/telescope.nvim)
 that allows you to import modules faster based on what you've already imported in your project.
 
-Often we find ourselves importing the same modules over and over again in an existing project. Rather than typing out import statements from scratch or yanking them from other existing files, `telescope-import.nvim` searches your project for existing import statements giving you a faster way to add them to the current buffer. Import patterns are sorted by frequency, so your most used statements are usually just a few keystrokes away.
+Often we find ourselves importing the same modules over and over again in an existing project. Rather than typing out import statements from scratch or yanking them from other existing files, `telescope-import.nvim` searches your project for existing import statements giving you a faster way to add them to the current buffer. Import patterns are sorted by frequency, so your most used statements are usually just a few keystrokes away. You can select multiple items to import using tab.
 
 For languages that support auto importing through their LSP, `telescope-import` may still be of benefit by importing frequently used patterns of exports, rather than individually importing one at a time, or all at once, which can be inaccurate when there are multiple symbols with the same name in the project.
 
-https://github.com/piersolenski/telescope-import.nvim/assets/1285419/014753e3-ea7b-4bad-9f86-fb2566bf27c1
+https://github.com/user-attachments/assets/b5c2d7bd-ced7-44d1-abd2-d96de37a05e8
 
 ## 🤖 Supported languages
 - Bash
@@ -72,3 +72,17 @@ require("telescope").setup({
 ```
 :Telescope import
 ```
+
+## 🤓 About the author
+
+As well as Vim enthusiast, I am a Front-End Developer and Technical Lead from London, UK.
+
+Whether it's to discuss a project, talk shop or just say hi, I'd love to hear from you!
+
+- [Website](https://www.piersolenski.com/)
+- [CodePen](https://codepen.io/piers)
+- [LinkedIn](https://www.linkedin.com/in/piersolenski/)
+
+<a href='https://ko-fi.com/piersolenski' target='_blank'>
+    <img height='36' style='border:0px;height:36px;' src='https://cdn.ko-fi.com/cdn/kofi1.png?v=3' border='0' alt='Buy Me a Coffee at ko-fi.com' />
+</a>
